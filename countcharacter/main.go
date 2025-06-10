@@ -4,23 +4,19 @@ import (
 	"fmt"
 )
 
-func countCharactersInOrder(s string) {
-	counts := make(map[rune]int)
-	order := []rune{}
-
-	for _, r := range s {
-		if _, exists := counts[r]; !exists {
-			order = append(order, r)
+func CountChar(str string, c rune) int {
+	count := 0
+	for _, r := range str {
+		if r == c {
+			count++
 		}
-		counts[r]++
 	}
-
-	for _, r := range order {
-		fmt.Printf("'%c' : %d\n", r, counts[r])
-	}
+	return count
 }
 
 func main() {
-	text := "hello world"
-	countCharactersInOrder(text)
+	fmt.Println(CountChar("Hello World", 'l'))
+	fmt.Println(CountChar("5  balloons", 5))
+	fmt.Println(CountChar("   ", ' '))
+	fmt.Println(CountChar("The 7 deadly sins", '7'))
 }
