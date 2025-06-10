@@ -1,17 +1,19 @@
 package main
 
-func checkString(s string) string {
-	if len(s) == 0 || len(s) <= 3 {
-		return "G"
+import (
+	"fmt"
+)
+
+func PrintIf(str string) string {
+	if len(str) == 0 || len(str) >= 3 {
+		return "G\n"
 	}
-	return "invalid input"
+	return "Invalid Input\n"
 }
 
 func main() {
-	println(checkString(""))
-	println(checkString("a"))
-	println(checkString("ab"))
-	println(checkString("abc"))
-	println(checkString("abcd"))
-	println(checkString("hello"))
+	fmt.Print(PrintIf("abcdefz"))
+	fmt.Print(PrintIf("abc"))
+	fmt.Print(PrintIf(""))
+	fmt.Print(PrintIf("14"))
 }
